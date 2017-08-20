@@ -14,7 +14,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/abhay', function (req, res) {
-  res.sendFile(path.join(__dirname, 'abhay', 'index.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'abhay.html'));
 });
 
 app.get('/sitemap', function (req, res) {
