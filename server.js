@@ -24,6 +24,7 @@ var htmlTemplate=`
     <head>
         <title>${title}</title>
         <meta name="viewport" content="width-device-width, initial-scale=1">
+        <link href="ui/style.css" rel="stylesheet">
         <style>
             .container{
                 max-width=800px;
