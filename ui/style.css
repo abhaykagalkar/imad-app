@@ -19,3 +19,9 @@ body {
     height: 200px;
 }
 
+ .container{
+                max-width=800px;
+                margin=auto;
+                color=grey;
+                font-family=sans-serif;
+ }
