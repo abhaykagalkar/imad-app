@@ -13,6 +13,14 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+app.get('/abhay', function (req, res) {
+  res.sendFile(path.join(__dirname, 'abhay', 'index.html'));
+});
+
+app.get('/sitemap', function (req, res) {
+  res.send('Sitemap is fetched and will be served');
+});
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
