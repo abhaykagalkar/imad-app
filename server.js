@@ -5,11 +5,27 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title:'Abhay kagalkar Page',
-    date:'August 20,2017',
-    heading:'Article One',
-    content: `This is a Web Page of our site Made from imad.hasura-app.io,This is a Web Page of our site Made from imad.hasura-app.io,This is a Web Page of our site Made from imad.hasura-app.io,v,vvvvThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.io`
+var articles = { 
+    'article-One' :{
+        title:'Abhay kagalkar Page',
+        date:'August 20,2017',
+        heading:'Article One',
+        content: `This is a Web Page of our site Made from imad.hasura-app.io,This is a Web Page of our site Made from imad.hasura-app.io,This is a Web Page of our site Made from imad.hasura-app.io,v,vvvvThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.ioThis is a Web Page of our site Made from imad.hasura-app.io`
+        
+    },
+    'article-Two' :{
+            title:'Abhay kagalkar Page',
+        date:'August 20,2017',
+        heading:'Article One',
+        content: `Hello this Abay`
+        
+    },
+    'article-Three':{
+             title:'Abhay kagalkar Page',
+        date:'August 20,2017',
+        heading:'Article One',
+        content: `Hello this Article three`
+    }
     
 };
 function createTemplate (data) {
@@ -62,8 +78,10 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/codesexplorer',function (req,res) {
-    res.send(createTemplate(articleOne));
+app.get('/:articleName',function (req,res) {
+    
+    var articleName=req.params.articleName; 
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/abhay', function (req, res) {
