@@ -45,4 +45,12 @@ var submit = document.getElementById('submit_btn');
 submit.onclick= function(){
     // Make the request to server and end the name
     // capture
-}
+    
+    var names = ['name1','name2','name3'];
+    var list = '';
+    for (var i=0;i<names.length;i++){
+        list += '<li>'+ names[i]+'</li>';
+    }
+    var ul=document.getElemetById('namelist');
+    ul.innerHTML=list; 
+};
